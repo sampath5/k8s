@@ -35,4 +35,4 @@ spec:
     targetPort: 8989
     nodePort: 32100
   selector:
-    app: eurekaserver
+    app: springgateway
