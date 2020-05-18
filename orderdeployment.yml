@@ -28,10 +28,11 @@ metadata:
   labels:
     app: orderservice
 spec:
-  type: Nodeport
+  type: NodePort
   ports:
   - port: 8081
     protocol: TCP
-    nodeport: 32121
+    targetPort: 8081
+    nodePort: 32121
   selector:
     app: orderservice
