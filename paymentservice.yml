@@ -28,11 +28,11 @@ metadata:
   labels:
     app: paymentservice
 spec:
-  type: Nodeport
+  type: NodePort
   ports:
   - port: 8082
     protocol: TCP
-    targetport: 8082
-    nodeport: 32122
+    targetPort: 8082
+    nodePort: 32122
   selector:
     app: paymentservice
