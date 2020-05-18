@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springgateway
+  labels:
+    app: springgateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springgateway
+  template:
+    metadata:
+      labels:
+        app: springgateway
+    spec:
+      containers:
+      - name: springgateway
+        image: sampath5/springgateway:1
+        ports:
+        - containerPort: 8989
+      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: springgateway
+  labels:
+    app: springgateway
+spec:
+  type: Nodeport
+  ports:
+  - port: 8989
+    protocol: TCP
+    targetport: 8989
+    nodeport: 32100
+  selector:
+    app: eurekaserver
