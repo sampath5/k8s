@@ -28,10 +28,11 @@ metadata:
   labels:
     app: thirdpartyservice
 spec:
-  type: Nodeport
+  type: NodePort
   ports:
   - port: 8083
     protocol: TCP
-    nodeport: 32123
+    targetPort: 8083
+    nodePort: 32123
   selector:
-    app: employee
+    app: thirdpartyservice
