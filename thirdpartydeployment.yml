@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thirdpartyservice
+  labels:
+    app: thirdpartyservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thirdpartyservice
+  template:
+    metadata:
+      labels:
+        app: thirdpartyservice
+    spec:
+      containers:
+      - name: thirdpartyservice
+        image: sampath5/thirdpartyservice:1.0
+        ports:
+        - containerPort: 8083
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: thirdpartyservice
+  labels:
+    app: thirdpartyservice
+spec:
+  type: Nodeport
+  ports:
+  - port: 8083
+    protocol: TCP
+    nodeport: 32123
+  selector:
+    app: employee
