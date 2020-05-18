@@ -28,11 +28,11 @@ metadata:
   labels:
     app: springgateway
 spec:
-  type: Nodeport
+  type: NodePort
   ports:
   - port: 8989
     protocol: TCP
-    targetport: 8989
-    nodeport: 32100
+    targetPort: 8989
+    nodePort: 32100
   selector:
     app: eurekaserver
