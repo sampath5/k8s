@@ -28,11 +28,11 @@ metadata:
   labels:
     app: eurekaserver
 spec:
-  type: Nodeport
+  type: NodePort
   ports:
   - port: 8176
     protocol: TCP
-    targetport: 8176
-    nodeport: 32120
+    targetPort: 8176
+    nodePort: 32120
   selector:
     app: eurekaserver
