@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: orderservice
-        image: sampath5/orderservice:1
+        image: sampath5/orderservice:3
         ports:
         - containerPort: 8081
        
