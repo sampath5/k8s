@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: thirdpartyservice
-        image: sampath5/thirdpartyservice:1.0
+        image: sampath5/thirdpartyservice:1
         ports:
         - containerPort: 8083
         
