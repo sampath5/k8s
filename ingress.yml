@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: example-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /order
+          backend:
+            serviceName: orderservice
+            servicePort: 8081
+        - path: /payment
+          backend:
+            serviceName: paymentservice
+            servicePort: 8082
+        - path: /thirdparty
+          backend:
+            serviceName: thirdpartyservice
+            servicePort: 8083
