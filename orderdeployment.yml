@@ -5,7 +5,7 @@ metadata:
   labels:
     app: orderservice
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: orderservice
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: orderservice
-        image: sampath5/orderservice:3
+        image: sampath5/otemp:1
         ports:
         - containerPort: 8081
        
