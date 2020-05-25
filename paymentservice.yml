@@ -19,13 +19,13 @@ spec:
         image: sampath5/paymentservice:1
         ports:
         - containerPort: 8082
-       volumeMounts:
-         -name: paymentconfig-volume
+        volumeMounts:
+        - name: paymentconfig-volume
           mountPath: etc/config
       volumes:
-        -name: paymentconfig-volume
-         configMap: 
-           name: paymentconfig
+      - name: paymentconfig-volume
+        configMap: 
+          name: paymentconfig
 ---
 apiVersion: v1
 kind: Service
