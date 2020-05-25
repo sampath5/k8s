@@ -1,0 +1,7 @@
+apiversion: v1
+kind: configMap
+metadata:
+  name: paymentconfig
+data:
+  application.properties: |-
+    my.greeting: this is a greeting from configfile.
