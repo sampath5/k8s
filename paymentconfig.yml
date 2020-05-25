@@ -1,5 +1,5 @@
 apiversion: v1
-kind: configMap
+kind: ConfigMap
 metadata:
   name: paymentconfig
 data:
